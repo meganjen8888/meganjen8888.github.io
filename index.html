@@ -3,55 +3,6 @@
 	<head>
 		<title>Computer Vision for Weapon Safety</title>
 		<style>#quiz {
-  background-color: #34495E;
-  padding-bottom: 60px;
-  width: 100%;
-  border-radius: 2%;
-  color: #fff;
-  text-align: center;
-  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
-}
-
-#quiz > h1 {
-  text-align: center;
-  padding-top: 25px;
-  font-size: 20px;
-}
-
-.questions {
-  font-size: 28px;
-  font-weight: 700;
-  font-style: italic;
-  border-top: 1px solid #FFFFFF;
-  border-bottom: 1px solid #FFFFFF;
-  padding: 20px;
-}
-
-.answers div {
-  padding: 10px 0 0 0;
-  font-size: 16px;
-}
-
-.answers div:hover {
-  cursor: pointer;
-  color: #FBCB43;
-}
-
-.answers {
-  padding: 0px 0 10px 0px;
-}
-
-.answers div {
-  width: 50%;
-  margin: 0 auto;
-  padding-bottom: 15px;
-  border-top: 1px solid grey;
-}
-
-.answers div:first-child {
-  border: none;
-}
-
 .checker {
   display: inline-block;
   width: 200px;
@@ -81,8 +32,6 @@
       checker      = document.getElementsByClassName('checker')[0],
       current      = 0,
   
-     // An object that holds all the questions + possible answers.
-     // In the array --> last digit gives the right answer position
       allQuestions = {
         'Which machine helps detect contraband in security checks?':['X-rays', 'Cameras', 'Computers', 0],
         
@@ -100,8 +49,6 @@
       };
       
   function loadQuestion(curr) {
-  // This function loads all the question into the questionArea
-  // It grabs the current question based on the 'current'-variable
   
     var question = Object.keys(allQuestions)[curr];
     
@@ -110,9 +57,6 @@
   }
   
   function loadAnswers(curr) {
-  // This function loads all the possible answers of the given question
-  // It grabs the needed answer-array with the help of the current-variable
-  // Every answer is added with an 'onclick'-function
   
     var answers = allQuestions[Object.keys(allQuestions)[curr]];
     
@@ -131,10 +75,6 @@
   }
   
   function checkAnswer(i, arr) {
-    // This is the function that will run, when clicked on one of the answers
-    // Check if givenAnswer is sams as the correct one
-    // After this, check if it's the last question:
-    // If it is: empty the answerArea and let them know it's done.
     
     return function () {
       var givenAnswer = i,
@@ -239,7 +179,7 @@
       <div class="answers"></div>         
       
       <div class="checkAnswers">
-        <h3>Correct?</h3>
+     
         <div class="checker">
 	</body>
 	
