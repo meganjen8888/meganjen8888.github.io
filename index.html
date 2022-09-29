@@ -2,28 +2,6 @@
 <html>
 	<head>
 		<title>Computer Vision for Weapon Safety</title>
-		<style>#quiz {
-.checker {
-  display: inline-block;
-  width: 200px;
-  margin: 0 auto;
-}
-
-.correct, .false {
-  background-color: #109D59;
-  width: 60px;
-  height: 30px;
-  line-height: 30px;
-  padding-left: 4px;
-  float: left;
-  margin-left: 2px;
-  margin-top: 2px;
-}
-
-.false {
-  background-color: #DC4437;
-}
-		</style>
 		<script type = "text/javascript">
 		window.onload = function () {
   
@@ -108,13 +86,10 @@
     
     createDiv.appendChild(txt);
     
-    if (bool) {
-      
-      createDiv.className += 'correct';
-      checker.appendChild(createDiv);
+    if (bool) {    
+      document.getElementByClassName("checker").innerHTML = "Correct!";
     } else {
-      createDiv.className += 'false';
-      checker.appendChild(createDiv);
+	document.getElementByClassName("checker").innerHTML = "Incorrect...";    
     }
   }
   
