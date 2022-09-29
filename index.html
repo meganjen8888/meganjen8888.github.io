@@ -87,9 +87,15 @@
     createDiv.appendChild(txt);
     
     if (bool) {    
-      document.getElementsByClassName("checker").innerHTML = "Correct!";
+      x=document.getElementsByClassName("demo");  // Find the elements
+    for(var i = 0; i < x.length; i++){
+    x[i].innerText="Correct!";    // Change the content
+    }
     } else {
-	document.getElementsByClassName("checker").innerHTML = "Incorrect...";    
+	x=document.getElementsByClassName("demo");  // Find the elements
+    for(var i = 0; i < x.length; i++){
+    x[i].innerText="Incorrect...";    // Change the content
+    }    
     }
   }
   
