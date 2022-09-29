@@ -2,7 +2,110 @@
 <html>
 	<head>
 		<title>Computer Vision for Weapon Safety</title>
-		
+		<script type = "text/javascript">
+		window.onload = function () {
+  
+  var questionArea = document.getElementsByClassName('questions')[0],
+      answerArea   = document.getElementsByClassName('answers')[0],
+      checker      = document.getElementsByClassName('checker')[0],
+      current      = 0,
+  
+     // An object that holds all the questions + possible answers.
+     // In the array --> last digit gives the right answer position
+      allQuestions = {
+        'What is Canada\'s national animal?' : ['Beaver', 'Duck', 'Horse', 0],
+        
+        'What is converted into alcohol during brewing?' : ['Grain', 'Sugar' , 'Water', 1],
+        
+        'In what year was Prince Andrew born? ' : ['1955', '1960', '1970', 1]
+      };
+      
+  function loadQuestion(curr) {
+  // This function loads all the question into the questionArea
+  // It grabs the current question based on the 'current'-variable
+  
+    var question = Object.keys(allQuestions)[curr];
+    
+    questionArea.innerHTML = '';
+    questionArea.innerHTML = question;    
+  }
+  
+  function loadAnswers(curr) {
+  // This function loads all the possible answers of the given question
+  // It grabs the needed answer-array with the help of the current-variable
+  // Every answer is added with an 'onclick'-function
+  
+    var answers = allQuestions[Object.keys(allQuestions)[curr]];
+    
+    answerArea.innerHTML = '';
+    
+    for (var i = 0; i < answers.length -1; i += 1) {
+      var createDiv = document.createElement('div'),
+          text = document.createTextNode(answers[i]);
+      
+      createDiv.appendChild(text);      
+      createDiv.addEventListener("click", checkAnswer(i, answers));
+      
+      
+      answerArea.appendChild(createDiv);
+    }
+  }
+  
+  function checkAnswer(i, arr) {
+    // This is the function that will run, when clicked on one of the answers
+    // Check if givenAnswer is sams as the correct one
+    // After this, check if it's the last question:
+    // If it is: empty the answerArea and let them know it's done.
+    
+    return function () {
+      var givenAnswer = i,
+          correctAnswer = arr[arr.length-1];
+      
+      if (givenAnswer === correctAnswer) {
+        addChecker(true);             
+      } else {
+        addChecker(false);                        
+      }
+      
+      if (current < Object.keys(allQuestions).length -1) {
+        current += 1;
+        
+        loadQuestion(current);
+        loadAnswers(current);
+      } else {
+        questionArea.innerHTML = 'Done';
+        answerArea.innerHTML = '';
+      }
+                              
+    };
+  }
+  
+  function addChecker(bool) {
+  // This function adds a div element to the page
+  // Used to see if it was correct or false
+  
+    var createDiv = document.createElement('div'),
+        txt       = document.createTextNode(current + 1);
+    
+    createDiv.appendChild(txt);
+    
+    if (bool) {
+      
+      createDiv.className += 'correct';
+      checker.appendChild(createDiv);
+    } else {
+      createDiv.className += 'false';
+      checker.appendChild(createDiv);
+    }
+  }
+  
+  
+  // Start the quiz right away
+  loadQuestion(current);
+  loadAnswers(current);
+  
+};
+		</script>
 	</head>
 	<body>
 		<h1> Computer Vision for Weapon Safety </h1>
@@ -22,7 +125,7 @@
 		<br><img src="detection.png"/>
 	One project involving X-rays, an AI recognition system, which won the Gold Award in 2018, was designed to alert and analyze contraband in X-ray images through training. 
 	Other similar projects were designed to use deep neural network models and successfully detect various objects in X-ray images, and another recorded project introduced and applied security networking concepts, identification, and information into the direction of intelligent screening. Like so:   <br><img src="airport_detection.png"/>
-		
+		Color X-ray images were applied with security screening, with objects showing different color characteristics in the X-ray image. This caused the precision to rise to nearly perfect, along with the X-ray feature of the computer vision in general.
       <h4> Parts to make the machinery work </h4> 
 		One part which was used to make computer vision for weapon detection work was the Fast RCNN model. That model was proposed and based on RCNN. This method does not require candidate frames to be included in the Deep Learning model. However, only certain training images are tested in the model, automatically mapping the coordinates at the feature level and speeding up the detection of the model. The accuracy of Fast RCNN on dataset PASCAL-VOC 2007 had overall decently increased in percentage, therefore increasing the efficiency as well.
 		The Faster RCNN algorithm was then introduced, and a module called RPN was designed to make the frames required by the training algorithm. An Anchor was also created to extract candidate frames from RPN at various scales. The ‘RPN + Anchor’ approach in the Faster RCNN replaces the Selective Search approach in the original method, which allows the model to be used efficiently and greatly improves the speed.
@@ -35,6 +138,20 @@
 		<img src="fast_rcnn"/>
 		<h4> Positive Results </h4>
 		Like stated before, the previous machines have made the environment safer with them scanning multiple X-ray images, and accurately detecting the weapons. 
+		One of the projects involving computer vision for weapon detection provided an ecological solution when utilizing various methods such as security networking concepts.
+		The machine’s average precision is nearly perfect when scanning the interior of a carry on bag via X-rays. 
+		<h4> Challenges </h4>
+		While the computer vision for weapon detection have made environments safer, there has been challenges with it. Judgement and decision making when scanning baggage with X-rays required manual work. Low experience and mental state of security personnels and inspectors have affected the status of contraband detection. 
+		Long hours of work would lead to exhaustion of workers, and therefore affect precision. The constant increase of passenger traffic also tires out computer vision machinery and personnels.
+		<h4> How it can be improved </h4>
+		People might use different algorithms to improve accuracy of their detection program and complete extraction. The algorithms could also help security personnels with judgement and decision making. 
+		Features and projects would also be created to deal with increasing passenger traffic, since they could quickly scan each passenger’s baggage for contraband.
+		<h4> Conclusion </h4>
+		Overall, computer vision for weapon detection can lessen safety accidents and make the environment safe. The program can use X-rays and algorithms for weapon detection. The methods the program can use could easily help detect contraband from baggages, and with them being in effect, Object detection could be faster and more accurate, and X-rays can greatly increase precision of the object detection when scanning baggage.
+
+
+
+
 		
 		<h1> Quiz </h1>
 		
