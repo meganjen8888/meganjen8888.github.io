@@ -21,9 +21,15 @@
 		<img src="detection.png"/>
 	One project involving X-rays, an AI recognition system, which won the Gold Award in 2018, was designed to alert and analyze contraband in X-ray images through training. 
 	Other similar projects were designed to use deep neural network models and successfully detect various objects in X-ray images, and another recorded project introduced and applied security networking concepts, identification, and information into the direction of intelligent screening. Like so:   <br><img src="airport_detection.png"/>
+		
       <h4> Parts to make the machinery work </h4> 
-	The method of object detection and tracking operates with the dataset being created, trained, and deployed to an object detection algorithm. A suitable detection algorithm gets selected for weapon detection via SSD or fast RCNN. The approach examines and solves the problem using machine-learning models such as RCNN.
+		One part which was used to make computer vision for weapon detection work was the Fast RCNN model. That model was proposed and based on RCNN. This method does not require candidate frames to be included in the Deep Learning model. However, only certain training images are tested in the model, automatically mapping the coordinates at the feature level and speeding up the detection of the model. The accuracy of Fast RCNN on dataset PASCAL-VOC 2007 had overall decently increased in percentage, therefore increasing the efficiency as well.
+		The Faster RCNN algorithm was then introduced, and a module called RPN was designed to make the frames required by the training algorithm. An Anchor was also created to extract candidate frames from RPN at various scales. The ‘RPN + Anchor’ approach in the Faster RCNN replaces the Selective Search approach in the original method, which allows the model to be used efficiently and greatly improves the speed.
+	SSD, or Single Shot Detection, is also used. 
+		Object detection and tracking methods work with datasets being created, trained, and deployed to object detection algorithms. A suitable detection algorithm is chosen for weapon detection. The method would examine and solve the problem, using various machine-learning models such as not only Region Convolutional Neural Network, but also a method called Single Shot Detection.
 		<img src="object_detecion_1.png"/>
+		Speaking of single shot detection, 
+		The fast RCNN model has been used by both security checks and survillence machinery. 
 	The CNN and RCNN portion of the project has two networks, one to to create relation proposals and other for network for detection. Selective search approach is used to create region proposals, with the RPN network ranking anchors and region boxes.
 		<img src="fast_rcnn"/>
 		<h4> Positive Results </h4>
