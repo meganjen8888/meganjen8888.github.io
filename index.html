@@ -13,11 +13,19 @@
      // An object that holds all the questions + possible answers.
      // In the array --> last digit gives the right answer position
       allQuestions = {
-        'What is Canada\'s national animal?' : ['Beaver', 'Duck', 'Horse', 0],
+        'Which machine helps detect contraband in security checks?' : ['X-rays', 'Cameras', 'Computers', 0],
         
-        'What is converted into alcohol during brewing?' : ['Grain', 'Sugar' , 'Water', 1],
+        'Which method is used to increase speed of detection?' : ['CNN', 'Fast RCNN' , 'Anchors', 1],
         
-        'In what year was Prince Andrew born? ' : ['1955', '1960', '1970', 1]
+        'Which of the following was a result of computer vision of weapon detection?' : ['Increased precision', 'Improved mental state of workers', 'Automatic scanning', 0],
+	 
+	'Which part will the computer vision require manual work?': ['Scanning for contraband', 'Judging and making decisions', 'Alerting the passenger upon finding contraband'. 1],
+	      
+	'What is the first step in the flow of object detection?': ['Object Tracking', 'Object Recognition', 'Dataset creation and training', 'Object Detection', 2],
+	  	    
+  	'What does fast RCNN use to generate region proposals?': ['Selective Search', 'X-ray images', 'Anchors', 0],
+	      
+	'What are anchors ranked by?': ['Fast RCNN','CNN','RPN Network', 2]  
       };
       
   function loadQuestion(curr) {
