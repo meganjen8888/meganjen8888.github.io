@@ -4,6 +4,8 @@
 		<title>Computer Vision for Weapon Safety</title>
 	</head>
 	<body>
+		<h1> Computer Vision for Weapon Safety </h1>
+		<h2> Megan Jen </h2>
 		<h4>Main Problem</h4>
 		There were Situations when people get into danger in public locations, some involving weaponry, and resulting in injuries or deaths. People have built visual detection machines or AI image detection programs to prevent these situations from happening and keeping the environment safe. The visual detection machines have been widely used in airports and bus and train stations. In this project, we will be discussing how Computer Vision prevents accidents involving weapons.   
 
@@ -23,8 +25,17 @@
             <br><img src="airport_detection.png"/>
 	In the survailence project,dataset is creaged, trained, and deployed to the algorithm. It addresses a detection problem using RCNN, as shown here.
 		<img src="object_detecion_1.png"/>
-	The CNN and RCNN portion of the project has two networks to create relation proposals and network for detection. Selective search approach is used to create region proposals. 
+	The CNN and RCNN portion of the project has two networks, one to to create relation proposals and other for network for detection. Selective search approach is used to create region proposals. 
+	
+		<h1> Quiz </h1>
 		
+      <p class="questions"></p>
+      
+      <div class="answers"></div>         
+      
+      <div class="checkAnswers">
+        <h3>Correct?</h3>
+        <div class="checker">
 	</body>
 	<script>
 	window.onload = function () {
@@ -36,12 +47,14 @@
   
      // An object that holds all the questions + possible answers.
      // In the array --> last digit gives the right answer position
-      allQuestions = {
-        'What is Canada\'s national animal?' : ['Beaver', 'Duck', 'Horse', 0],
+      quizquestions = {
+        'Which method is used for security checks?' : ['X-rays', 'CNN', 'RNN', 0],
         
-        'What is converted into alcohol during brewing?' : ['Grain', 'Sugar' , 'Water', 1],
+        'What is the first step of survillence object detection?' : ['Object Recognition', 'Object Tracking', 'Object Detection', 'Dataset creation and training', 3],
         
-        'In what year was Prince Andrew born? ' : ['1955', '1960', '1970', 1]
+        'How does CNN and RCNN work for survillence?' : ['With two networks', 'Using a trained dataset', 'Using edge detection', 0]
+	      
+	'Which two networks are used for the survillence?' : ['Relation proposals and detection network', 'CNN and RNN', 'Deep learning and X-rays', 0]   
       };
       
   function loadQuestion(curr) {
