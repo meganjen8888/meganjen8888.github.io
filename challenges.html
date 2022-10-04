@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+		body {
+			background-color: coral;
+			color: white;
+			font-family: Arial, Helvetica, sans-serif;
+			}
+
+			h4 {
+				align: center;
+			}
+
+			div #header {
+				color: #83a67e
+				height: 15%;
+			}
+
+
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #ffc6a1;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: #ffc533;
+  color: black;
+}
+			
+		</style>
+		<title>Computer Vision for Weapon Safety</title>
+		<script type = "text/javascript">
+		window.onload = function () {
+  
+  var questionArea = document.getElementsByClassName('questions')[0],
+      answerArea   = document.getElementsByClassName('answers')[0],
+      checker      = document.getElementsByClassName('checker')[0],
+      current      = 0,
+  
+      allQuestions = {
+        'Which machine helps detect contraband in security checks?':['X-rays', 'Cameras', 'Computers', 0],
+        
+        'Which method is used to increase speed of detection?':['CNN', 'Fast RCNN' , 'Anchors', 1],
+        
+        'Which of the following was a result of computer vision of weapon detection?':['Increased precision', 'Improved mental state of workers', 'Automatic scanning', 0],
+	 
+	'Which part will the computer vision require manual work?':['Scanning for contraband', 'Judging and making decisions', 'Alerting the passenger upon finding contraband', 1],
+	      
+	'What is the first step in the flow of object detection?':['Object Tracking', 'Object Recognition', 'Dataset creation and training', 'Object Detection', 2],
+	  	    
+  	'What does fast RCNN use to generate region proposals?':['Selective Search', 'X-ray images', 'Anchors', 0],
+	      
+	'What are anchors ranked by?':['Fast RCNN','CNN','RPN Network', 2],
+
+	'What are one of the two main components of the CCTV surveilance system?':['Operators','RPN Network','Anchors', 0]
+      };
+      
+  function loadQuestion(curr) {
+  
+    var question = Object.keys(allQuestions)[curr];
+    
+    questionArea.innerHTML = '';
+    questionArea.innerHTML = question;    
+  }
+  
+  function loadAnswers(curr) {
+  
+    var answers = allQuestions[Object.keys(allQuestions)[curr]];
+    
+    answerArea.innerHTML = '';
+    
+    for (var i = 0; i < answers.length -1; i += 1) {
+      var createDiv = document.createElement('div'),
+          text = document.createTextNode(answers[i]);
+      
+      createDiv.appendChild(text);      
+      createDiv.addEventListener("click", checkAnswer(i, answers));
+      
+      
+      answerArea.appendChild(createDiv);
+    }
+  }
+  
+  function checkAnswer(i, arr) {
+    
+    return function () {
+      var givenAnswer = i,
+          correctAnswer = arr[arr.length-1];
+      
+      if (givenAnswer === correctAnswer) {
+        addChecker(true);             
+      } else {
+        addChecker(false);                        
+      }
+      
+      if (current < Object.keys(allQuestions).length -1) {
+        current += 1;
+        
+        loadQuestion(current);
+        loadAnswers(current);
+      } else {
+        questionArea.innerHTML = 'Done';
+        answerArea.innerHTML = '';
+      }
+                              
+    };
+  }
+  
+  function addChecker(bool) {
+  // This function adds a div element to the page
+  // Used to see if it was correct or false
+  
+    var createDiv = document.createElement('div'),
+        txt       = document.createTextNode(current + 1);
+    
+    createDiv.appendChild(txt);
+    
+    if (bool) {    
+      x=document.getElementsByClassName("checker");  // Find the elements
+    for(var i = 0; i < x.length; i++){
+    x[i].innerText="Correct!";    // Change the content
+    }
+    } else {
+	x=document.getElementsByClassName("checker");  // Find the elements
+    for(var i = 0; i < x.length; i++){
+    x[i].innerText="Incorrect...";    // Change the content
+    }    
+    }
+  }
+  
+  
+  // Start the quiz right away
+  loadQuestion(current);
+  loadAnswers(current);
+  
+};
+		</script>
+	</head>
+	<body>
+
+		<div class="topnav">
+  <a class="active" href="../main_problem.html">Main Problem</a>
+  <a href="../introduction.html">Introduction</a>
+  <a href="../similar_projects.html">Similar Projects</a>
+  <a href="../parts.html">Parts Used</a>
+  <a href="../pos_results.html">Positive Results</a>
+  <a href="../challenges.html">Challenges</a>
+  <a href="../future.html">How to Improve?</a>
+  <a href="../conclusion.html">Conclusion</a>
+  <a href="../quiz.html">Quiz</a>
+  <a href="../sources.html">Sources</a>
+</div>
+		<h4> Challenges </h4>
+		While the computer vision for weapon detection have made environments safer, there has been challenges with it. Judgement and decision making when scanning baggage with X-rays required manual work. Low experience and mental state of security personnels and inspectors have affected the status of contraband detection. 
+		Long hours of work would lead to exhaustion of workers, and therefore affect precision. The constant increase of passenger traffic also tires out computer vision machinery and personnels. <br>
+		Another challenge would be distortion when attempting to detect weapons and environmental effects such as shadows, as Tiwari and Verma state in their article.
+		It is also sometimes not very easy for one CCTV operator to monitor every activity in one scene, since the detection of crimes proportions the operator's focus on every action in the video, and the ratio for operator to screen, run on multiple videos on the same screen, and environmental condition of the operation room are all weak. The operator's accuracy also isn't perfect 24/7.<br>
+		Tiwari and Verma also stated that the gun's physical appearance, such as color and shape, is a challenge, since one model of gun can vary from another model by a number due to a variation in body parts. Scale variation can grow due to a distance change from the CCTV in the video, and rotation and view variation changes due to change in orientation of the weapon and its plane.
+	</body>
+	
+</html>
