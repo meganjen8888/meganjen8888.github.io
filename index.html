@@ -10,7 +10,7 @@
 			}
 
 			div #header {
-				color: #83a67e;
+				color: #83a67e
 				height: 15%;
 			}
 			
@@ -137,7 +137,7 @@
         <h4>Previous Similar Projects</h4>
         <p>There were similar projects which were created for computer vision for weapon safety. An example would be, like mentioned before, security checks were operated to scan passengers' luggage for contraband using X-rays, which have average precisions of 99.1% and effectively improves effiency. X-rays can quickly scan passengers' luggages, and reconstruct images according to materials in the luggage. However, judgement and decision making work would be manual, and low security personnel experience, personnel level, and mental state can eventually lead to a disadvantage. 
         </p>
-        <br><img src="airport_security.png"/>
+        <img src="airport_security.png"/>
         <p> Another similar project were video surveillance systems. They have used algorithms such as CNN based SSH and fast RCNN algorithms, with the system playing a role in monitors. 
             </p>
         <p>Speaking of video survailance systems, a project called CCTV, or Closed Circuit Television, was a monitoring and surveillance tool to detect crimes, social offence, and abnormal activity, such as missing people and weapon misuse, from a scene to present to courts and television screens for evidence, using a camera to record the scene and an operator to monitor the actions in the scene. Gun detection is currently significant for CCTV's system, as it is often used as weapons for different crimes, and it's illegal to carry a gun out in public in some countries, making it important for safety concern.</p>
@@ -157,11 +157,10 @@
 		<img src="object_detection_1.png"/>
 		The fast RCNN model has been used by both security checks and survillence machinery. 
 	The CNN and RCNN portion of the project has two networks, one to to create relation proposals and other for network for detection. Selective search approach is used to create region proposals, with the RPN network ranking anchors and region boxes.
+	CCTV's GDS has used color-based segmentation and interest point detectors, as well as Harris interest point detectors and FREAK descriptors to detect features.
+	Its color based segmentation feature involved k-means clustering algorithms to separate other objects, then apply morphological processing on each object to bridge small gaps and extract boundaries. Interest point features are then extracted and matched with a stored descriptor to find out if the footage object is similar to a gun. It sets off an alarm if the accuracy is over 50%.
 		<br>
 		<img src="fast_rcnn.png"/>
-		CCTV's GDS has used color-based segmentation and interest point detectors, as well as Harris interest point detectors and FREAK descriptors to detect features.
-	Its color based segmentation feature involved k-means clustering algorithms to separate other objects, then apply morphological processing on each object to bridge small gaps and extract boundaries. Interest point features are then extracted and matched with a stored descriptor to find out if the footage object is similar to a gun. It sets off an alarm if the accuracy is over 50%. Here is a diagram of how the system works:
-		<br><img src="gun_detection.png"/>
 		<h4> Positive Results </h4>
 		Like stated before, the previous machines have made the environment safer with them scanning multiple X-ray images, and accurately detecting the weapons. 
 		One of the projects involving computer vision for weapon detection provided an ecological solution when utilizing various methods such as security networking concepts.
@@ -171,7 +170,7 @@
 		<h4> Challenges </h4>
 		While the computer vision for weapon detection have made environments safer, there has been challenges with it. Judgement and decision making when scanning baggage with X-rays required manual work. Low experience and mental state of security personnels and inspectors have affected the status of contraband detection. 
 		Long hours of work would lead to exhaustion of workers, and therefore affect precision. The constant increase of passenger traffic also tires out computer vision machinery and personnels.
-		<br>Another challenge would be distortion when attempting to detect weapons and environmental effects such as shadows, as Tiwari and Verma state in their article.
+		Another challenge would be distortion when attempting to detect weapons and environmental effects such as shadows, as Tiwari and Verma state in their article.
 		It is also sometimes not very easy for one CCTV operator to monitor every activity in one scene, since the detection of crimes proportions the operator's focus on every action in the video, and the ratio for operator to screen, run on multiple videos on the same screen, and environmental condition of the operation room are all weak. The operator's accuracy also isn't perfect 24/7.
 		Tiwari and Verma also stated that the gun's physical appearance, such as color and shape, is a challenge, since one model of gun can vary from another model by a number due to a variation in body parts. Scale variation can grow due to a distance change from the CCTV in the video, and rotation and view variation changes due to change in orientation of the weapon and its plane.
 		<br>
@@ -201,8 +200,13 @@
    <div id = "footer">
    	<h4>Sources</h4>
    	<p>
-   		
-   	</p>
+   		Jain, Harsh, et al. Weapon Detection using Artificial Intelligence and Deep Learning for Security Applications, RV College of Engineering, 2020. 
+
+<br>
+Wu, Shang. Deep Learning-Based Hazardous Materials Detection Algorithm, Case Western Reserve University, 2021.
+<br>
+Tiwari, Rohit, et al. A Computer Vision based Framework for Visual Gun Detection using Harris Interest Point Detector, National Institute of Technology-Kurukshetra, 2015.
+		   	</p>
    </div>
 	</body>
 	
