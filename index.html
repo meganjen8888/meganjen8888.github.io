@@ -137,7 +137,7 @@
 		People have built visual detection machines or AI image detection programs involving algorithm functions inside physical machines such as security checks or survilance cameras to prevent more of these situations from happening and keep the environment safe. The visual detection machines have been widely used in airports and bus and train stations. In this project, we will be discussing how Computer Vision prevents accidents involving weapons.   
 
         <h4>Introduction</h4>
-        Computer Vision programs for weapon detection can help examine baggage, factory machines, video scenes, etc for contraband in order to keep environments safe. They can use algorithms such as edge detection and deep learning to find contraband in luggages or areas, as well as X-rays. The methods the programs use include model design, feature extraction, auto-border regression, model deployment, and metrics. 
+        Computer Vision programs for weapon detection can help examine the interior of baggage, factory machines, video footage scenes, etc for contraband in order to keep environments safe. They can use algorithms such as edge detection, deep learning, and morphological closing to find contraband in luggages or areas, as well as X-rays. The methods the programs use include model design, feature extraction, auto-border regression, model deployment, and metrics. 
 
         <h4>Previous Similar Projects</h4>
         <p>There were similar projects which were created for computer vision for weapon safety. An example would be, like mentioned before, security checks were operated to scan passengers' luggage for contraband using X-rays, which have average precisions of 99.1% and effectively improves effiency. X-rays can quickly scan passengers' luggages, and reconstruct images according to materials in the luggage. However, judgement and decision making work would be manual, and low security personnel experience, personnel level, and mental state can eventually lead to a disadvantage. 
@@ -166,12 +166,6 @@
 	Its color based segmentation feature involved k-means clustering algorithms to separate other objects, then apply morphological processing on each object to bridge small gaps and extract boundaries. Interest point features are then extracted and matched with a stored descriptor to find out if the footage object is similar to a gun. It sets off an alarm if the accuracy is over 50%.
 		<br>
 		<img src="fast_rcnn.png"/>
-		<h4> Positive Results </h4>
-		Like stated before, the previous machines have made the environment safer with them scanning multiple X-ray images, and accurately detecting the weapons. 
-		One of the projects involving computer vision for weapon detection provided an ecological solution when utilizing various methods such as security networking concepts.
-		The machine’s average precision is nearly perfect when scanning the interior of a carry on bag via X-rays. 
-		<br>
-		CCTV had also planned out a GDS, or a gun detection system, for their surveilance system, which would look for guns in the video feed and prepare an alarm upon detecting a gun in the scene. The operator would look at the scene and examine it for actual weapons in the video, and decide whether to accept or discard the video. GDS had provided good assistance to CCTV operators in long hours, and made it easier to monitor multiple feeds at one screen. 
 		<br>
 		The GDS also uses system initialization, which puts stored interest point descriptors together with extracted interest point features. The system also uses Harris interest point detector and FREAK to compare images, and preprocessing to remove images from the image during transmission of the video, via a median filter. Image resizing is used to process the images in the system.
 		<br>
@@ -191,6 +185,12 @@
 		Matching is used to compare the score between the descriptor between the gun and the blob. Interest point features are used for matching, with the inner texture's variation of object. The variation creates different features for interest points of different images, while the outline would remain constant or make slight changes. Similarity score is used to find out the extent of the object shape and if its similar to a shape of a gun.
 		The nearest neighbor ratio algorithm is to calculate the match between two descriptors with the metric sum of square difference. Like so:
 		<img src="matching.png"/>
+		<h4> Positive Results </h4>
+		Like stated before, the previous machines have made the environment safer with them scanning multiple X-ray images, and accurately detecting the weapons. 
+		One of the projects involving computer vision for weapon detection provided an ecological solution when utilizing various methods such as security networking concepts.
+		The machine’s average precision is nearly perfect when scanning the interior of a carry on bag via X-rays. 
+		<br>
+		CCTV had also planned out a GDS, or a gun detection system, for their surveilance system, which would look for guns in the video feed and prepare an alarm upon detecting a gun in the scene. The operator would look at the scene and examine it for actual weapons in the video, and decide whether to accept or discard the video. GDS had provided good assistance to CCTV operators in long hours, and made it easier to monitor multiple feeds at one screen. 
 		<h4> Challenges </h4>
 		While the computer vision for weapon detection have made environments safer, there has been challenges with it. Judgement and decision making when scanning baggage with X-rays required manual work. Low experience and mental state of security personnels and inspectors have affected the status of contraband detection. 
 		Long hours of work would lead to exhaustion of workers, and therefore affect precision. The constant increase of passenger traffic also tires out computer vision machinery and personnels.
