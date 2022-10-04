@@ -157,10 +157,11 @@
 		<img src="object_detection_1.png"/>
 		The fast RCNN model has been used by both security checks and survillence machinery. 
 	The CNN and RCNN portion of the project has two networks, one to to create relation proposals and other for network for detection. Selective search approach is used to create region proposals, with the RPN network ranking anchors and region boxes.
-	CCTV's GDS has used color-based segmentation and interest point detectors, as well as Harris interest point detectors and FREAK descriptors to detect features.
-	Its color based segmentation feature involved k-means clustering algorithms to separate other objects, then apply morphological processing on each object to bridge small gaps and extract boundaries. Interest point features are then extracted and matched with a stored descriptor to find out if the footage object is similar to a gun. It sets off an alarm if the accuracy is over 50%.
 		<br>
 		<img src="fast_rcnn.png"/>
+		CCTV's GDS has used color-based segmentation and interest point detectors, as well as Harris interest point detectors and FREAK descriptors to detect features.
+	Its color based segmentation feature involved k-means clustering algorithms to separate other objects, then apply morphological processing on each object to bridge small gaps and extract boundaries. Interest point features are then extracted and matched with a stored descriptor to find out if the footage object is similar to a gun. It sets off an alarm if the accuracy is over 50%. Here is a diagram of how the system works:
+		<img src="gun_detection.png"/>
 		<h4> Positive Results </h4>
 		Like stated before, the previous machines have made the environment safer with them scanning multiple X-ray images, and accurately detecting the weapons. 
 		One of the projects involving computer vision for weapon detection provided an ecological solution when utilizing various methods such as security networking concepts.
