@@ -10,7 +10,7 @@
 			}
 
 			div #header {
-				background-color: #83a67e;
+				color: #83a67e
 				height: 15%;
 			}
 			
@@ -124,15 +124,17 @@
 		</script>
 	</head>
 	<body>
-		<div id = "header">
+		<div id = "header" style="background-color: #83a67e;">
 		<h1> Computer Vision for Weapon Safety </h1>
 		<h2> Megan Jen </h2>
 	</div>
 		<h4>Main Problem</h4>
-		There were situations when people get into danger in public locations, some involving weaponry, and resulting in injuries or deaths. People have built visual detection machines or AI image detection programs to prevent these situations from happening and keeping the environment safe. The visual detection machines have been widely used in airports and bus and train stations. In this project, we will be discussing how Computer Vision prevents accidents involving weapons.   
+		There were situations when people create danger in public locations, with some involving weapons, and resulting in injuries, deaths, or destruction of property. These situations have created eventually created historical murders, mass homocides and shootings, and arsons, thus shocking the community and endanering the environment. 
+		<br>
+		People have built visual detection machines or AI image detection programs involving algorithm functions inside physical machines such as security checks or survilance cameras to prevent more of these situations from happening and keep the environment safe. The visual detection machines have been widely used in airports and bus and train stations. In this project, we will be discussing how Computer Vision prevents accidents involving weapons.   
 
         <h4>Introduction</h4>
-        Computer Vision programs for weapon detection can scan baggage, factory machines, etc for contraband in order to keep environments safe. They can use algorithms such as edge detection and deep learning to find contraband in luggages or areas, as well as X-rays. The methods the programs use include model design, feature extraction, auto-border regression, model deployment, and metrics.
+        Computer Vision programs for weapon detection can help examine baggage, factory machines, video scenes, etc for contraband in order to keep environments safe. They can use algorithms such as edge detection and deep learning to find contraband in luggages or areas, as well as X-rays. The methods the programs use include model design, feature extraction, auto-border regression, model deployment, and metrics. 
 
         <h4>Previous Similar Projects</h4>
         <p>There were similar projects which were created for computer vision for weapon safety. An example would be, like mentioned before, security checks were operated to scan passengers' luggage for contraband using X-rays, which have average precisions of 99.1% and effectively improves effiency. X-rays can quickly scan passengers' luggages, and reconstruct images according to materials in the luggage. However, judgement and decision making work would be manual, and low security personnel experience, personnel level, and mental state can eventually lead to a disadvantage. 
@@ -140,12 +142,13 @@
         <img src="airport_security.png"/>
         <p> Another similar project were video surveillance systems. They have used algorithms such as CNN based SSH and fast RCNN algorithms, with the system playing a role in monitors. 
             </p>
+        <p>Speaking of video survailance systems, a project called CCTV, or Closed Circuit Television, was a monitoring and surveillance tool to detect crimes, social offence, and abnormal activity, such as missing people and weapon misuse, from a scene to present to courts and television screens for evidence, using a camera to record the scene and an operator to monitor the actions in the scene. Gun detection is currently significant for CCTV's system, as it is often used as weapons for different crimes, and it's illegal to carry a gun out in public in some countries, making it important for safety concern.</p>
 		<br>
 		<img src="detection.png"/>
-		<p>Speaking of video survailance systems, a project called CCTV, or Closed Circuit Television, was a monitoring and surveillance tool to detect crimes, social offence, and abnormal activity, such as missing people and weapon misuse, from a scene to present to courts and television screens for evidence, using a camera to record the scene and an operator to monitor the actions in the scene. Gun detection is currently significant for CCTV's system, as it is often used as weapons for different crimes, and it's illegal to carry a gun out in public in some countries, making it important for safety concern.</p>
 	One project involving X-rays, an AI recognition system, which won the Gold Award in 2018, was designed to alert and analyze contraband in X-ray images through training. 
 	Other similar projects were designed to use deep neural network models and successfully detect various objects in X-ray images, and another recorded project introduced and applied security networking concepts, identification, and information into the direction of intelligent screening. Like so:   <br><img src="airport_detection.png"/>
 		Color X-ray images were applied with security screening, with objects showing different color characteristics in the X-ray image. This caused the precision to rise to nearly perfect, along with the X-ray feature of the computer vision in general.
+		
       <h4> Parts to make the machinery work </h4> 
 		One part which was used to make computer vision for weapon detection work was the Fast RCNN model. That model was proposed and based on RCNN. This method does not require candidate frames to be included in the Deep Learning model. However, only certain training images are tested in the model, automatically mapping the coordinates at the feature level and speeding up the detection of the model. The accuracy of Fast RCNN on dataset PASCAL-VOC 2007 had overall decently increased in percentage, therefore increasing the efficiency as well.
 		The Faster RCNN algorithm was then introduced, and a module called RPN was designed to make the frames required by the training algorithm. An Anchor was also created to extract candidate frames from RPN at various scales. The ‘RPN + Anchor’ approach in the Faster RCNN replaces the Selective Search approach in the original method, which allows the model to be used efficiently and greatly improves the speed.
@@ -164,8 +167,27 @@
 		Like stated before, the previous machines have made the environment safer with them scanning multiple X-ray images, and accurately detecting the weapons. 
 		One of the projects involving computer vision for weapon detection provided an ecological solution when utilizing various methods such as security networking concepts.
 		The machine’s average precision is nearly perfect when scanning the interior of a carry on bag via X-rays. 
+		<br>
 		CCTV had also planned out a GDS, or a gun detection system, for their surveilance system, which would look for guns in the video feed and prepare an alarm upon detecting a gun in the scene. The operator would look at the scene and examine it for actual weapons in the video, and decide whether to accept or discard the video. GDS had provided good assistance to CCTV operators in long hours, and made it easier to monitor multiple feeds at one screen. 
 		<br>
+		The GDS also uses system initialization, which puts stored interest point descriptors together with extracted interest point features. The system also uses Harris interest point detector and FREAK to compare images, and preprocessing to remove images from the image during transmission of the video, via a median filter. Image resizing is used to process the images in the system.
+		<br>
+		FREAK is a keypoint descriptor which is inspired by the vision of the human visual system. A sampling pattern is part of the cascade's computation of binary strings by comparing image features. It is also faster and more accurate than other keypoint descriptors. The binary representation is used for dimensionality reduction.
+		<br>
+		It can also manipulate smoothing of the input image with Gaussian kernel for noise suppression. The binary descriptor F is made by thresholding the comparison between receptive fields with their Gaussian kernel. It's also created by Difference of Gaussians.
+		<br>
+		Morphological closing is calculated by having the output of closing, being the erosion of image with structuring element followed by dilation with the structuring element. The boundary is obtained by subtracting the erosion of image output from the original image. Here are the equations: <br>
+		<img src="equations.png"/>
+		<br>
+	Ic is the output of closing, I is the original image, SE is the structuring element, and B is the boundary of image.
+		<br>
+		The Harris detector is useful for detecting weapons in security footage since it is constant to geometric transformation, illumination change, and noise. Here is its equation, where w(x,y) is the Gaussian window function centered at (x,y), I(x,y) is the image intensity at (x,y), and I(x+u, y+v) is the image intensity at the window shaft of (u,v) from (x,y).
+		<br>
+		<img src="harris.png"/>
+		<br>
+		Matching is used to compare the score between the descriptor between the gun and the blob. Interest point features are used for matching, with the inner texture's variation of object. The variation creates different features for interest points of different images, while the outline would remain constant or make slight changes. Similarity score is used to find out the extent of the object shape and if its similar to a shape of a gun.
+		The nearest neighbor ratio algorithm is to calculate the match between two descriptors with the metric sum of square difference. Like so:
+		<img src="matching.png"/>
 		<h4> Challenges </h4>
 		While the computer vision for weapon detection have made environments safer, there has been challenges with it. Judgement and decision making when scanning baggage with X-rays required manual work. Low experience and mental state of security personnels and inspectors have affected the status of contraband detection. 
 		Long hours of work would lead to exhaustion of workers, and therefore affect precision. The constant increase of passenger traffic also tires out computer vision machinery and personnels.
@@ -179,7 +201,7 @@
 		To improve CCTV's surveillance system, an automation of the crime detection would be installed to reduce operator overload, and an alarm would be created and set off upon the operator detecting the weapon in CCTV's video.
 		<br>
 		<h4> Conclusion </h4>
-		Overall, computer vision for weapon detection can lessen safety accidents and make the environment safe. The programs can use X-rays and algorithms for weapon detection. The methods the program can use could easily help detect contraband from baggages, and with them being in effect, Object detection could be faster and more accurate, and X-rays can greatly increase precision of the object detection when scanning baggage.
+		Overall, computer vision for weapon detection can lessen safety accidents and make the environment safe. The programs can use X-rays and algorithms such as CNN and Harris interest point algorithms for weapon detection. The methods the program can use could easily help detect contraband from baggages, and with them being in effect, object detection could be faster and more accurate.
 
 
 
@@ -205,7 +227,7 @@
 Wu, Shang. Deep Learning-Based Hazardous Materials Detection Algorithm, Case Western Reserve University, 2021.
 <br>
 Tiwari, Rohit, et al. A Computer Vision based Framework for Visual Gun Detection using Harris Interest Point Detector, National Institute of Technology-Kurukshetra, 2015.
-		   	</p>
+   	</p>
    </div>
 	</body>
 	
